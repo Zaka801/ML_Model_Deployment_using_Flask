@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <style>
+    body {
+      background-color: lightblue; /* Set the background color to light blue */
+    }
+  </style>
+  <meta charset="UTF-8">
+  <title>Decision Tree</title>
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Play Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="OUTLOOK" placeholder="OUTLOOK" required="required" />
+        <input type="text" name="TEMPERATURE" placeholder="TEMPERATURE" required="required" />
+		<input type="text" name="HUMIDITY" placeholder="HUMIDITY" required="required" />
+		<input type="text" name="WIND" placeholder="WIND" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
